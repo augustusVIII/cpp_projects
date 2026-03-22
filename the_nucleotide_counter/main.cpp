@@ -43,21 +43,12 @@ int main()
 	int A = 0, T = 0, G = 0, C = 0;
 	for (int i = 0; i < dna.length(); i++)
 	{
-		if (dna[i] == 'A')
+		switch(dna[i])
 		{
-			A += 1;
-		}
-		else if (dna[i] == 'T')
-		{
-			T += 1;
-		}
-		else if (dna[i] == 'G')
-		{
-			G += 1;
-		}
-		else if (dna[i] == 'C')
-		{
-			C += 1;
+			case 'A': A++; break;
+			case 'T': T++; break;
+			case 'G': G++; break;
+			case 'C': C++; break;
 		}
 	}
 	cout << "The total occurrences of each nucleotide is:" << endl;
