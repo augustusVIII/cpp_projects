@@ -25,16 +25,12 @@ int main()
 	cout << "Please input your DNA sequence: ";
 	cin >> dna;
 	
-	// implement universal-case (upper and lower) to the input
-	for (int i = 0; i < dna.length(); i++)
-	{
-		dna[i] = toupper(dna[i]);
-	}
-	
 	// algorithm to validate the input. It iterate through the input string
 	// and find if there's any wrong character.
 	for (int i = 0; i < dna.length(); i++)
 	{
+		// implement universal-case (upper and lower) to the input
+		dna[i] = toupper(dna[i]);
 		if (dna[i] != 'A' && dna[i] != 'T' && dna[i] != 'G' && dna[i] != 'C')
 		{
 		cout << "Please input a valid dna sequence: A, T, G, C only." << endl;
