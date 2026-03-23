@@ -15,9 +15,9 @@ and read the multi-line sequence into a single string.
 	- Complement the base: A-T, G-C.  
 - Transcribe to RNA: Replace all 'T's with 'U's.  
 - Export: Save the results into a new text file called results.txt.  
-- The program won't runs all features. Instead, it will ask the user what they want.  
+- The program won't runs all features. Instead, it will asks the user what they want.  
 
-**What need to use:**  
+**What need to be used:**  
 - fstream  
 - fuctions  
 - std::vector  
