@@ -26,8 +26,8 @@ and read the multi-line sequence into a single string.
 ### Ideas scrap
 
 How to solve the .fasta headline problem  
-- Do like this
-`c++
+- Do like this  
+```c++
 #include <sstream>
 #include <string>
 string str;
@@ -38,7 +38,7 @@ if (file)
 	str = buffer.str()
 }
 // After that, the whole content of the .fasta file will be stored insied str.
-`
+```
 - After you get str, you need to iterate through the text, until it reach endline,
 everytime it see a ">", it will plus 1 variable, which is used to store the content of
 the dna/rna sequence.
