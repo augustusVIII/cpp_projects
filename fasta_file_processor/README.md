@@ -23,6 +23,28 @@ and read the multi-line sequence into a single string.
 - std::vector  
 - pass-by-reference  
 
+### Ideas scrap
+
+How to solve the .fasta headline problem  
+- Do like this
+`c++
+#include <sstream>
+#include <string>
+string str;
+if (file)
+{
+	std::stringstream buffer;
+	buffer << file.rdbuf()
+	str = buffer.str()
+}
+// After that, the whole content of the .fasta file will be stored insied str.
+`
+- After you get str, you need to iterate through the text, until it reach endline,
+everytime it see a ">", it will plus 1 variable, which is used to store the content of
+the dna/rna sequence.
+- Then you find someway to store the dna/rna sequence into a variable. Then you can work 
+on the problems.
+- Using end of file (.eof) to stop the program when it reach the end of the .fasta file.
 
  
 
