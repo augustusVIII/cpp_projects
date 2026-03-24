@@ -7,21 +7,20 @@ using namespace std;
 
 int main()
 {
-	// write to a file
-	string test_input;
-	cout << "Please input a random sequence: ";
-	cin >> test_input;
+	// TO-DO: Open the .fasta file and read it into a string
+	string sequence;
+	ifstream in_file("sequences.fasta");
 	
-	ofstream out_file("result.txt");
-	out_file << test_input;
-	out_file.close();
+	while (in_file.is_open())
+	{
+		char current = in_file.get();
+		
+		
+	}
 	
-	// read from a file
-	string test_output;
-	ifstream in_file("result.txt");
-	in_file >> test_output;
-	cout << test_output << endl;
-	in_file.close();
+	
+	in_file >> sequence;
+	cout << sequence << endl;
 	
 	return 0;
 }
