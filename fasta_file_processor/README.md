@@ -37,7 +37,7 @@ if (file)
 	buffer << file.rdbuf()
 	str = buffer.str()
 }
-// After that, the whole content of the .fasta file will be stored insied str.
+// After that, the whole content of the .fasta file will be stored inside str.
 ```
 - After you get str, you need to iterate through the text, until it reach endline,
 everytime it see a ">", it will plus 1 variable, which is used to store the content of
