@@ -47,5 +47,6 @@ on the problems.
 - Using end of file (.eof) to stop the program when it reach the end of the .fasta file.
 
  
-
+I swear using getline() with a loop is the key to answer this question. Try to find a way to 
+implement it you brat.
 
