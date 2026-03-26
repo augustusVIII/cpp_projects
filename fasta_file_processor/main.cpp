@@ -5,10 +5,10 @@
 #include <fstream>
 
 using namespace std;
-int headlines_count(string text);
 
 // Prototypes
 string read_file();
+int headlines_count(string text);
 
 int main()
 {
