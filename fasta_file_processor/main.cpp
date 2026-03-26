@@ -7,19 +7,21 @@
 using namespace std;
 
 // Prototypes
-void read_file();
+string read_file();
 
 int main()
 {
 	// TO-DO: Open the .fasta file and read it into a string
-	read_file();
+	string content = read_file();
+	
+	cout << content << '\n';
 	
 	return 0;
 }
 
-void read_file()
+string read_file()
 {
-	string content;
+	string result;
 	
 	ifstream input_file("sequences.fasta");
 	
@@ -27,10 +29,9 @@ void read_file()
 	{
 		stringstream buffer;
 		buffer << input_file.rdbuf();
-		content = buffer.str();
+		result = buffer.str();
+		input_file.close();
 	}
-	
-	cout << content << "\n";
-	
-	input_file.close();
+
+	return result;
 }
