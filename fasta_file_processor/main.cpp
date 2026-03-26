@@ -5,6 +5,7 @@
 #include <fstream>
 
 using namespace std;
+int headlines_count(string text);
 
 // Prototypes
 string read_file();
@@ -14,7 +15,11 @@ int main()
 	// TO-DO: Open the .fasta file and read it into a string
 	string content = read_file();
 	
+	// TO-DO: Iterate throught the whole text to count how many headlines are there
+	int headlines = headlines_count(content);
+	
 	cout << content << '\n';
+	cout << "Number of headlines: " << headlines << '\n';
 	
 	return 0;
 }
@@ -34,4 +39,20 @@ string read_file()
 	}
 
 	return result;
+}
+
+int headlines_count(string text)
+{
+	int n = 0;
+	
+	for (int i = 0; i < text.length(); i++)
+	{
+		// > is the beginning of a .fasta file header.
+		if (text[i] == '>')
+		{
+			n += 1;
+		}
+	}
+	
+	return n;
 }
