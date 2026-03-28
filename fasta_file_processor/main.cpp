@@ -11,6 +11,7 @@ using namespace std;
 string read_file();
 string read_file_except_headlines();
 string reverse(string sequence);
+string complement(string sequence);
 
 
 int main()
@@ -22,13 +23,17 @@ int main()
 	string sequence = read_file_except_headlines();
 	
 	// TO-DO: Reverse complement: Reverse
-	string reverse_sequence = reverse(sequence);
+	string reversed_sequence = reverse(sequence);
+	
+	//TO-DO: Reverse complement: Complement
+	string complemented_sequence = complement(reversed_sequence);
 	
 	
 	// Printing results
 	cout << "With headline\n" << content << '\n' << '\n';
 	cout << "Without headline\n" << sequence << '\n';
-	cout << "Reverse of the sequence" << reverse_sequence << '\n';
+	cout << "Reverse of the sequence" << reversed_sequence << '\n';
+	cout << '\n' << "Complement of the reversed sequence" << complemented_sequence << '\n';
 	
 	
 
@@ -83,6 +88,28 @@ string reverse(string sequence)
 	{
 		// Swap the 2 opposing character in the string
 		swap(sequence[i], sequence[length - i - 1]);
+	}
+	
+	return sequence;
+}
+
+// Reverse complement: Complement
+string complement(string sequence)
+{
+	int length = sequence.length();
+	for (int i = 0; i < length; i++)
+	{
+		// Uppercase all the letter
+		sequence[i] = toupper(sequence[i]);
+		
+		// Complement
+		switch(sequence[i])
+		{
+			case 'A': sequence[i] = 'T'; break;
+			case 'T': sequence[i] = 'A'; break;
+			case 'G': sequence[i] = 'C'; break;
+			case 'C': sequence[i] = 'G'; break;
+		}
 	}
 	
 	return sequence;
