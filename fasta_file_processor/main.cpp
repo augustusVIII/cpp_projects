@@ -3,12 +3,14 @@
 #include <string>
 #include <cctype>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
 // Prototypes
 string read_file();
 string read_file_except_headlines();
+string reverse(string sequence);
 
 
 int main()
@@ -19,9 +21,15 @@ int main()
 	// TO-DO: Open the .fasta file and read it into a string EXCEPT for the headlines
 	string sequence = read_file_except_headlines();
 	
+	// TO-DO: Reverse complement: Reverse
+	string reverse_sequence = reverse(sequence);
+	
+	
 	// Printing results
 	cout << "With headline\n" << content << '\n' << '\n';
 	cout << "Without headline\n" << sequence << '\n';
+	cout << "Reverse of the sequence" << reverse_sequence << '\n';
+	
 	
 
 	return 0;
@@ -65,4 +73,17 @@ string read_file_except_headlines()
 	}
 	
 	return result;
+}
+
+// Reverse complement: Reverse
+string reverse(string sequence)
+{
+	int length = sequence.length();
+	for (int i = 0; i < length/2; i++)
+	{
+		// Swap the 2 opposing character in the string
+		swap(sequence[i], sequence[length - i - 1]);
+	}
+	
+	return sequence;
 }
