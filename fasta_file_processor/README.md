@@ -50,3 +50,5 @@ on the problems.
 I swear using getline() with a loop is the key to answer this question. Try to find a way to 
 implement it you brat.
 
+Commit sau khi add function cuoi cung: commit "add function ... and put all previous funcs
+in int and paste that only function to main"

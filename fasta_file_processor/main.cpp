@@ -13,30 +13,14 @@ string read_file_except_headlines();
 string reverse(string sequence);
 string complement(string sequence);
 string to_RNA(string sequence);
+void ask_user();
 
 int main()
-{
-	// TO-DO: Open the .fasta file and read it into a string
-	string content = read_file();	
+{	
+	// TO-DO: Ask the user for what they want
+	ask_user();
 	
-	// TO-DO: Open the .fasta file and read it into a string EXCEPT for the headlines
-	string sequence = read_file_except_headlines();
-	
-	// TO-DO: Reverse complement: Reverse
-	string reversed_sequence = reverse(sequence);
-	
-	//TO-DO: Reverse complement: Complement
-	string complemented_sequence = complement(reversed_sequence);
-	
-	// TO-DO: Transcribe to RNA (of the original sequence)
-	string RNA = to_RNA(sequence);
-	
-	// Printing results
-	cout << "With headline\n" << content << '\n' << '\n';
-	cout << "Without headline\n" << sequence << '\n';
-	cout << "Reverse of the sequence" << reversed_sequence << '\n';
-	cout << '\n' << "Complement of the reversed sequence" << complemented_sequence << '\n';
-	cout << '\n' << "Transcribe the original sequence to RNA\n" << RNA << '\n';
+	// TO-DO: Read the result to a text-file
 	
 	
 
@@ -132,4 +116,36 @@ string to_RNA(string sequence)
 	}
 	
 	return sequence;
+}
+
+// Ask the user for what they want
+void ask_user()
+{
+	cout << "What feature do you want? " << '\n';
+	cout << "Read the original sequence (type '1')" << '\n';
+	cout << "Reverse complement the original sequence (type '2')" << '\n';
+	cout << "Transcribe the original sequence to RNA (type '3')" << '\n';
+
+	int input;
+	cin >> input;
+	
+	string sequence = read_file_except_headlines();	
+	if (input == 1)
+	{
+		cout << sequence << '\n';
+	}
+	else if (input == 2)
+	{
+		string reversed_sequence = reverse(sequence);
+		string complemented_sequence = complement(reversed_sequence);
+		cout << complemented_sequence << '\n';
+	}
+	else if (input == 3)
+	{
+		string RNA = to_RNA(sequence);
+		cout << RNA << '\n';
+	}
+	
+	
+	cout << "You can also view the result in result.txt" << '\n';
 }
