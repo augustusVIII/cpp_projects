@@ -13,14 +13,16 @@ string read_file_except_headlines();
 string reverse(string sequence);
 string complement(string sequence);
 string to_RNA(string sequence);
-void ask_user();
+string ask_user();
+void read_to_txt(string content);
 
 int main()
 {	
 	// TO-DO: Ask the user for what they want
-	ask_user();
+	string result = ask_user();
 	
 	// TO-DO: Read the result to a text-file
+	read_to_txt(result);
 	
 	
 
@@ -119,7 +121,7 @@ string to_RNA(string sequence)
 }
 
 // Ask the user for what they want
-void ask_user()
+string ask_user()
 {
 	cout << "What feature do you want? " << '\n';
 	cout << "Read the original sequence (type '1')" << '\n';
@@ -133,19 +135,37 @@ void ask_user()
 	if (input == 1)
 	{
 		cout << sequence << '\n';
+		return sequence;
 	}
 	else if (input == 2)
 	{
 		string reversed_sequence = reverse(sequence);
 		string complemented_sequence = complement(reversed_sequence);
 		cout << complemented_sequence << '\n';
+		return complemented_sequence;
 	}
 	else if (input == 3)
 	{
 		string RNA = to_RNA(sequence);
 		cout << RNA << '\n';
+		return RNA;
+	}
+	else
+	{
+		cout << "Input not accepted, please try again" << '\n';
+		return "";
 	}
 	
-	
 	cout << "You can also view the result in result.txt" << '\n';
+	
+	// To avoid non-void function error
+	return "";
+}
+
+// Read the result to a text-file
+void read_to_txt(string content)
+{
+	ofstream out_file("result.txt");
+	out_file << content;
+	out_file.close();
 }
