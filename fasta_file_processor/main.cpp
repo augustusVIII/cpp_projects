@@ -23,8 +23,6 @@ int main()
 	
 	// TO-DO: Read the result to a text-file
 	read_to_txt(result);
-	
-	
 
 	return 0;
 }
