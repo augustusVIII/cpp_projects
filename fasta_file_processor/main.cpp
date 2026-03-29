@@ -12,7 +12,7 @@ string read_file();
 string read_file_except_headlines();
 string reverse(string sequence);
 string complement(string sequence);
-
+string to_RNA(string sequence);
 
 int main()
 {
@@ -28,12 +28,15 @@ int main()
 	//TO-DO: Reverse complement: Complement
 	string complemented_sequence = complement(reversed_sequence);
 	
+	// TO-DO: Transcribe to RNA (of the original sequence)
+	string RNA = to_RNA(sequence);
 	
 	// Printing results
 	cout << "With headline\n" << content << '\n' << '\n';
 	cout << "Without headline\n" << sequence << '\n';
 	cout << "Reverse of the sequence" << reversed_sequence << '\n';
 	cout << '\n' << "Complement of the reversed sequence" << complemented_sequence << '\n';
+	cout << '\n' << "Transcribe the original sequence to RNA\n" << RNA << '\n';
 	
 	
 
@@ -109,6 +112,22 @@ string complement(string sequence)
 			case 'T': sequence[i] = 'A'; break;
 			case 'G': sequence[i] = 'C'; break;
 			case 'C': sequence[i] = 'G'; break;
+		}
+	}
+	
+	return sequence;
+}
+
+// Transcribe to RNA
+string to_RNA(string sequence)
+{
+	int length = sequence.length();
+	for (int i = 0; i < length; i++)
+	{
+		sequence[i] = toupper(sequence[i]);
+		switch(sequence[i])
+		{
+			case 'T': sequence[i] = 'U'; break;
 		}
 	}
 	
