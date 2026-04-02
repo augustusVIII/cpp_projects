@@ -133,6 +133,7 @@ string ask_user()
 	if (input == 1)
 	{
 		cout << sequence << '\n';
+		cout << "You can also view the result in result.txt" << '\n';
 		return sequence;
 	}
 	else if (input == 2)
@@ -140,21 +141,22 @@ string ask_user()
 		string reversed_sequence = reverse(sequence);
 		string complemented_sequence = complement(reversed_sequence);
 		cout << complemented_sequence << '\n';
+		cout << "You can also view the result in result.txt" << '\n';
 		return complemented_sequence;
 	}
 	else if (input == 3)
 	{
 		string RNA = to_RNA(sequence);
 		cout << RNA << '\n';
+		cout << "You can also view the result in result.txt" << '\n';
 		return RNA;
 	}
 	else
 	{
 		cout << "Input not accepted, please try again" << '\n';
+		cout << "You can also view the result in result.txt" << '\n';
 		return "";
 	}
-	
-	cout << "You can also view the result in result.txt" << '\n';
 	
 	// To avoid non-void function error
 	return "";
