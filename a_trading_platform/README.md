@@ -55,3 +55,7 @@ Follow this sequence:
 6. Connect Stock history to ChartPanel — line chart appears.
 7. Build Trader — human player can place orders through the GUI.
 8. Build AlgoTrader — simulated opponent placing orders on a timer.
+
+
+## One principle to keep in mind throughout
+Your core/ classes should never touch ImGui. They don't know a GUI exists. The gui/ classes are the only ones allowed to reach into core/ and read data to display it. Keep that wall clean and the project stays manageable.
