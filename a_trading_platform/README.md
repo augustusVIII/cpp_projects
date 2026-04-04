@@ -4,7 +4,7 @@ Since this is a big project, I used claude/gemini to help me brainstorm the fold
 workflow and some general stuffs, but NONE of the code is AI-generated.  
 I want to learn, so I write the code all by myself, without any help.  
 
-## Folder structure (claude suggestion)
+## Folder structure
 ```
 TradingPlatform/
 │
