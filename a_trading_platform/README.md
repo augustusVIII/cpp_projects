@@ -44,3 +44,14 @@ TradingPlatform/
 - OrderBookPanel — one GUI panel that reads from OrderBook and draws bids, asks, spread.  
 - ChartPanel — one GUI panel that reads from Stock's price history and draws the line chart via ImPlot.  
 - CMakeLists.txt — your build file. Tells the compiler where everything is. You'll set this up once and mostly forget it.
+
+## Build order - what to write first
+Follow this sequence:  
+1. Get ImGui running — blank window, nothing else. Just prove the GUI boots.
+2. Build Order and OrderBook — pure logic, no GUI. Test it mentally or with cout.
+3. Build MatchingEngine — hook it to OrderBook. Make a trade happen in the console.
+4. Build Stock + price history — every matched trade logs a price.
+5. Connect OrderBook to OrderBookPanel — first real GUI data, see bids/asks on screen.
+6. Connect Stock history to ChartPanel — line chart appears.
+7. Build Trader — human player can place orders through the GUI.
+8. Build AlgoTrader — simulated opponent placing orders on a timer.
