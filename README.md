@@ -8,3 +8,5 @@ a list of DSA problems that I solved in luyencode.net.
 a simple project that counts the nucleotide of a dna sequence.
 - [FASTA file processor](https://github.com/augustusVIII/cpp_projects/tree/main/fasta_file_processor): 
 a project that processes .FASTA files.
+- [learn cmake](https://github.com/augustusVIII/cpp_projects/tree/main/learn_cmake): my attempt to learn cmake.  
+- [a trading platform](https://github.com/augustusVIII/cpp_projects/tree/main/a_trading_platform): my most complex project yet (april 2026), it mimics a trading platform.
