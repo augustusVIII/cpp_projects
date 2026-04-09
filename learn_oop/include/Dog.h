@@ -1,23 +1,13 @@
-#pragma once // prevents the file from being included twice
+#pragma once
+#include <Animal.h>
 
-#include <string>
-
-class Dog
+class Dog : public Animal // Dog inherits from Animal
 {
     public:
-        // constructors
-        Dog(); // default constructor (no args)
-        Dog(std::string name, int age); // parameterized constructor
-        Dog(const Dog& other); // copy constructor
-        ~Dog(); // destructor
-
-        // methods
-        void bark();
-        std::string getName();
-        int getAge();
+        Dog(std::string name, int age, std::string breed);
+        void fetch(); // Dog-specific method
+        void speak() override; // overrides Animal::speak()
 
     private:
-        // member variables (data)
-        std::string name;
-        int age;
+        std::string breed;
 };
