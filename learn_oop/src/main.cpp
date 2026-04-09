@@ -3,14 +3,13 @@
 
 int main()
 {
-    Dog a; // default constructor
-    Dog myDog("Rex", 3); // create a Dog object
-    Dog c = myDog; // copy constructor
-    // ~Dog() runs automatically when go out of scope. In this case, the main() function.
+    Dog d("Rex", 3, "Labrador");
+    d.eat(); // inherited from Animal
+    d.speak(); // Dog's version of speak()
+    d.fetch(); // Dog-only
 
-    std::cout << a.getName() << a.getAge() << '\n';
-    std::cout << myDog.getName() << myDog.getAge() << '\n';
-    std::cout << c.getName() << c.getAge() << '\n';
+    Animal* ptr = &d; // pointer to Animal, holds a Dog
+    ptr->speak(); // still calls Dog::speak() - this is POLYMORPHISM
 
     return 0;
 }
