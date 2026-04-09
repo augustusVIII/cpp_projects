@@ -1,43 +1,15 @@
 #include "Dog.h"
 #include <iostream>
 
-Dog::Dog()
-{
-    name  = "Unknown";
-    age = 0;
-}
+// must call Animal's constructor first via initializer list
+Dog::Dog(std::string name, int age, std::string breed) : Animal(name, age), breed(breed) {}
 
-// constructore: Dog:: means "this belongs to the Dog class"
-Dog::Dog(std::string name, int age) : name(name), age(age)
-{
-    // the ":name(name), age(age)" is an initializer list
-    // it's cleaner and faster than assigning inside the body.
-}
-
-Dog::Dog(const Dog& other)
-{
-    // copy constructor: make a deep copy of another Dog
-    name = other.name;
-    age = other.age;
-}
-
-Dog::~Dog()
-{
-    // destructor: clean up resources here
-    std::cout << name << " has left the building.\n";
-}
-
-void Dog::bark()
+void Dog::speak()
 {
     std::cout << name << " says: Woof!\n";
 }
 
-std::string Dog::getName()
+void Dog::fetch()
 {
-    return name;
-}
-
-int Dog::getAge()
-{
-    return age;
+    std::cout << name << " fetches the ball\n";
 }
