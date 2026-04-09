@@ -3,10 +3,14 @@
 
 int main()
 {
+    Dog; // default constructor
     Dog myDog("Rex", 3); // create a Dog object
-    myDog.bark(); // Rex says: Woof!
+    Dog c = myDog; // copy constructor
+    // ~Dog() runs automatically when go out of scope. In this case, the main() function.
 
-    std::cout << myDog.getName() << " is " << myDog.getAge() << " years old.\n";
+    std::cout << Dog << '\n';
+    std::cout << myDog << '\n';
+    std::cout << c << '\n';
 
     return 0;
 }
