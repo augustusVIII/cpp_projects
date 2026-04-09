@@ -1,11 +1,30 @@
 #include "Dog.h"
 #include <iostream>
 
-// constructore: Dog:: means "this belongs to the Dog class"
-Dog::Dog(std::string name, int age)
+Dog::Dog()
 {
-    this->name = name; // "this" refers to the current object
-    this->age = age;
+    name  = "Unknown";
+    age = 0;
+}
+
+// constructore: Dog:: means "this belongs to the Dog class"
+Dog::Dog(std::string name, int age) : name(name), age(age)
+{
+    // the ":name(name), age(age)" is an initializer list
+    // it's cleaner and faster than assigning inside the body.
+}
+
+Dog::Dog(const Dog& other)
+{
+    // copy constructor: make a deep copy of another Dog
+    name = other.name
+    age = other.age;
+}
+
+Dog::~Dog()
+{
+    // destructor: clean up resources here
+    std::cout << name << "has left the building.\n";
 }
 
 void Dog::bark()
