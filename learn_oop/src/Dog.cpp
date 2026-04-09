@@ -17,14 +17,14 @@ Dog::Dog(std::string name, int age) : name(name), age(age)
 Dog::Dog(const Dog& other)
 {
     // copy constructor: make a deep copy of another Dog
-    name = other.name
+    name = other.name;
     age = other.age;
 }
 
 Dog::~Dog()
 {
     // destructor: clean up resources here
-    std::cout << name << "has left the building.\n";
+    std::cout << name << " has left the building.\n";
 }
 
 void Dog::bark()
