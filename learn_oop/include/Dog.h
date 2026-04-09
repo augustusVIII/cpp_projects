@@ -5,8 +5,11 @@
 class Dog
 {
     public:
-        // constructor
-        Dog(std::string name, int age);
+        // constructors
+        Dog(); // default constructor (no args)
+        Dog(std::string name, int age); // parameterized constructor
+        Dog(const Dog& other); // copy constructor
+        ~Dog(); // destructor
 
         // methods
         void bark();
