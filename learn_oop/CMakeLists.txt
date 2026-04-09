@@ -14,6 +14,7 @@ include_directories(include)
 set(SOURCES
     src/main.cpp
     src/Dog.cpp
+    src/Animal.cpp
 )
 
 # build executable file
