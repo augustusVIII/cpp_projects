@@ -13,6 +13,7 @@ include_directories(include)
 # collect all .cpp file into a variable called sources
 set(SOURCES
     src/main.cpp
+    src/Cat.cpp
     src/Dog.cpp
     src/Animal.cpp
 )
